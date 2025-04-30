@@ -25,7 +25,6 @@ public class UserServiceImpl implements UserService {
 		dto.setId(user.getId());
 		dto.setName(user.getName());
 		dto.setEmail(user.getEmail());
-		// Do not expose password in DTO for security reasons
 		return dto;
 	}
 
@@ -64,7 +63,6 @@ public class UserServiceImpl implements UserService {
 		User existing = repo.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + id));
 
-		// If email is being updated, check for duplicate
 		if (dto.getEmail() != null && !dto.getEmail().equals(existing.getEmail())) {
 			if (repo.existsByEmail(dto.getEmail())) {
 				throw new EmailAlreadyExistsException("Email already in use: " + dto.getEmail());
