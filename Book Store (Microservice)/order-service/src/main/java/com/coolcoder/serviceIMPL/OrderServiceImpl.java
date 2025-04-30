@@ -42,11 +42,9 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	@Transactional
 	public OrderDTO placeOrder(OrderDTO dto) {
-		// Validate user
 		UserDTO user = userClient.getById(dto.getUserId());
 		if (user == null)
 			throw new ResourceNotFoundException("User not found: " + dto.getUserId());
-		// Validate book
 		BookDTO book = bookClient.getById(dto.getBookId());
 		if (book == null)
 			throw new ResourceNotFoundException("Book not found: " + dto.getBookId());
