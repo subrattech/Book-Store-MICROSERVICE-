@@ -10,9 +10,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-/**
- * Handles exceptions across the whole order-service application.
- */
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
