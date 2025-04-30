@@ -1,4 +1,3 @@
-// === mapper/BookMapper.java ===
 package com.coolcoder.mapper;
 
 import org.springframework.stereotype.Component;
@@ -9,7 +8,6 @@ import com.coolcoder.model.Book;
 @Component
 public class BookMapper {
 
-	// Convert BookDTO to Book entity
 	public Book toEntity(BookDTO bookDTO) {
 		Book book = new Book();
 		book.setTitle(bookDTO.getTitle());
@@ -19,7 +17,6 @@ public class BookMapper {
 		return book;
 	}
 
-	// Convert Book entity to BookDTO
 	public BookDTO toDTO(Book book) {
 		BookDTO bookDTO = new BookDTO();
 		bookDTO.setId(book.getId());
@@ -30,7 +27,6 @@ public class BookMapper {
 		return bookDTO;
 	}
 
-	// Update Book entity from BookDTO (for update operation)
 	public void updateEntityFromDTO(BookDTO bookDTO, Book book) {
 		if (bookDTO.getTitle() != null) {
 			book.setTitle(bookDTO.getTitle());
