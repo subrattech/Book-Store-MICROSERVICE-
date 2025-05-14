@@ -14,11 +14,12 @@ This repository contains the core microservices of the Bookstore Application, bu
                |   API Gateway (4848)   |
                +------------------------+
                 /          |           \
-               /           |            \
-              /            |             \
-   user-service     book-service     order-service
-      (8081)            (8082)           (8083)
-
+               /           |             \
+              /            |               \
+    _____________    _______________    _______________             
+  | user-service |  | book-service  |  | order-service |
+  |    (8081)    |  |     (8082)    |  |     (8083)    |
+  | ____________ |  | _____________ |  | _____________ |
 Each service registers with the Eureka Discovery Server and communicates through the API Gateway using load-balanced routes.
 
 ### Prerequisites
